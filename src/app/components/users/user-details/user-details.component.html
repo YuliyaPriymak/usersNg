@@ -1,0 +1,18 @@
+<div *ngIf="user" class="container">
+  <div class="card mt-3">
+    <div class="card-body">
+      <h4 class="card-title">{{user.id}}. {{user.name}}</h4>
+      <h6 class="card-subtitle mb-2 text-muted">{{user.username}}</h6>
+      <p class="card-text">
+        email: {{user.email}}<br>
+        phone: {{user.phone}}<br>
+        website: {{user.website}}<br>
+      </p>
+      <a [routerLink]="['post']" [state]="{userId: user.id}" class="card-link">{{user.username}} posts</a>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+
+

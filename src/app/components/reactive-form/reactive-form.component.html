@@ -1,0 +1,44 @@
+<div>
+  <h4>Enter user name</h4>
+  <form [formGroup]="form" (change)="action()" class="form-inline">
+    <input type="text" class="form-control mr-sm-2" placeholder="user name" [formControl]="userName"
+           [ngClass]="{'bg-danger':
+    userName?.errors?.minlength?.requiredLength >
+    userName?.errors?.minlength?.actualLength || userName?.errors?.pattern}">
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">action</button>
+  </form>
+  <div class="card bg-danger mt-3" *ngIf="userName?.errors?.pattern">
+    <div class="card-body text-white">
+      Please, in english!
+    </div>
+  </div>
+  <div class="card bg-danger  mt-3" *ngIf="userName?.errors?.minlength">
+    <div class="card-body text-white">
+      Entered name is too short!
+    </div>
+  </div>
+  <div class="card mt-3" *ngIf="users && !users.length">
+    <div class="card-body">
+      User is not found
+    </div>
+  </div>
+
+  <div *ngIf="users">
+    <div *ngFor="let u of users">
+      <div class="card mt-3">
+        <div class="card-body">
+          <h4 class="card-title">{{u.id}}. {{u.name}}</h4>
+          <h6 class="card-subtitle mb-2 text-muted">{{u.username}}</h6>
+          <p class="card-text">
+            email: {{u.email}}<br>
+            website: {{u.website}}<br>
+            phone: {{u.phone}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,14 @@
+<div>
+  <h4 [ngClass]="{text_grey: idUser.valid}">Choose user</h4>
+  <form #form='ngForm' class="form-inline">
+    <div class="align-content-center">
+      <select [(ngModel)]="Users" #idUser='ngModel' name="idUser" (change)="checkInput(idUser)" class="custom-select"
+              required>
+        <option *ngFor="let user of usersList" [ngValue]="user">{{user.name}}</option>
+      </select>
+      <button [routerLink]="['users/details', userId]" class="btn btn-primary" [disabled]="form.invalid">More info
+      </button>
+    </div>
+  </form>
+</div>
+

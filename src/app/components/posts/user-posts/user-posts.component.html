@@ -1,0 +1,15 @@
+<div *ngFor="let post of userPostsList" class="container">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">{{post.id}}. {{post.title}}</h4>
+      <p class="card-text">
+        {{post.body}}
+      </p>
+      <a [routerLink]="['comments']" [queryParams]="{id: post.id}" class="card-link">Comments</a>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
+
+
+

@@ -1,0 +1,11 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title"></h4>
+    <h6 class="card-subtitle mb-2 text-muted">  {{user.id}}. {{user.name}}, {{user.username}}
+    </h6>
+    <a [routerLink]="['details', user.id]" class="card-link">Details</a>
+    <a (click)="save(user)" class="card-link" type="submit">Choose/save</a>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

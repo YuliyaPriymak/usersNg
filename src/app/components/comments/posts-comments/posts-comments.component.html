@@ -1,0 +1,14 @@
+<div *ngFor="let comment of postCommentsList" class="container">
+  <div class="card mt-3">
+    <div class="card-body">
+      <h4 class="card-title">{{comment.id}}. {{comment.name}}</h4>
+      <h6 class="card-subtitle mb-2 text-muted">{{comment.email}}</h6>
+      <p class="card-text">
+        {{comment.body}}
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
